@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  terraform:
+    build: .
+    image: terraform
+    container_name: terraform
+    volumes:
+      - ./:/terraform/data
+    env_file:
+      - env.${SERVERLESS_ENV}
+    networks:
+      - dev
+
+networks:
+  dev:
+    driver: bridge
