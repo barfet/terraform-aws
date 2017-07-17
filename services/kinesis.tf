@@ -1,4 +1,4 @@
-resource "aws_kinesis_stream" "logging" {
+resource "aws_kinesis_stream" "services" {
   name             = "${var.kinesis_stream_prefix}.borysenok.com"
   shard_count      = 1
   retention_period = 48
